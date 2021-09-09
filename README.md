@@ -1,1 +1,0 @@
-# pictar-geoszg5nb
