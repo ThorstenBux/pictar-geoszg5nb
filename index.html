@@ -10,16 +10,32 @@
 
     <body style="margin: 0; overflow: hidden;">
         <a-scene
+        vr-mode-ui="enabled: false"
             embedded
             loading-screen="enabled: false;"
-            arjs="sourceType: webcam; debugUIEnabled: false;"
+            arjs="sourceType: webcam; videoTexture: true; debugUIEnabled: false; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960;"
         >
-                <a-image
+                <!-- <a-image
                     src="assets/asset.png"
                     look-at="[gps-camera]"
-                    scale="1 1 1"
-                    gps-entity-place="latitude: 43.25683852561694; longitude: -79.87009616611482;"
-                ></a-image>
+                    scale="10 10 10"
+                    gps-entity-place="latitude: 43.400278; longitude: 172.314444"
+                ></a-image> -->
+    <a-text value="This content will always face you." look-at="[gps-camera]" scale="120 120 120"
+        gps-entity-place="latitude: -43.40099334716797; longitude: 172.32296752929688;"></a-text>
+
+                    <a-image src="assets/asset.png" look-at="[gps-camera]" scale="120 120 120"
+                        gps-entity-place="latitude: -43.40099334716797; longitude: 172.32296752929688;"></a-image>
+
+                <a-entity gltf-model="./assets/scene.gltf" rotation="0 180 0" scale="0.15 0.15 0.15"
+                    gps-entity-place="longitude: 172.314380; latitude: -43.400130;" animation-mixer />
+
+                <a-box color="yellow" scale="0.1 0.1 0.1" gps-entity-place="latitude: -43.400278; longitude: 172.314444;" />
+
+                    <a-image src="https://raw.githubusercontent.com/ThorstenBux/geo-web-ardkynya/master/assets/Te-Papa.jpg" look-at="[gps-camera]" scale="120 120 120"
+                        gps-entity-place="latitude: -41.2905; longitude: 174.78188037872317;"></a-image>
+                                <!-- <a-image src="assets/asset.png" look-at="[gps-camera]" scale="10 10 10"
+                                    gps-entity-place="latitude: -43.303356; longitude: 172.595718"></a-image> -->
 
             <a-camera gps-camera rotation-reader></a-camera>
         </a-scene>
